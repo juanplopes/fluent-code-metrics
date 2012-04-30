@@ -76,9 +76,10 @@ tipos dos parâmetros em métodos e construtores, exceptions.", ProgrammingLangu
         [NUnit.Framework.TestCaseAttribute("Samples.OneArgVoidMethod", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.IntMethod", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.StringArgIntMethod", "3", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.OneProperty", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.OneAttribute", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleProperty", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleField", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.OneException", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleNonAutoProperty", "2", new string[0])]
         public virtual void CalcularAcoplamentoEferenteParaUmTipo(string tipo, string ce, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular Acoplamento Eferente para um tipo", exampleTags);

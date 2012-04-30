@@ -49,10 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CeExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluentCodeMetrics.Core\FluentCodeMetrics.Core.csproj">
+      <Project>{76E1A53D-F8EB-4AD1-A589-F7E6059E0503}</Project>
+      <Name>FluentCodeMetrics.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FluentCodeMetrics.Specs\FluentCodeMetrics.Specs.csproj">
+      <Project>{D44688D3-71FB-40FC-AFAF-6FA9073AF154}</Project>
+      <Name>FluentCodeMetrics.Specs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

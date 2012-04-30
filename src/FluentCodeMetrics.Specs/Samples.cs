@@ -17,7 +17,7 @@ namespace Samples
         {}
     }
 
-    class OneArgVoidMethod
+    class SingleArgVoidMethod
     {
          public void Foo(int arg)
          {}
@@ -39,12 +39,20 @@ namespace Samples
          }
     }
 
-    class OneProperty
+    class SingleProperty
     {
         public string Foo { get; set; }
     }
 
-    class OneAttribute
+    class SingleNonAutoProperty
+    {
+        public string Message
+        {
+            get { return "Hello World"; }
+        }
+    }
+
+    public class SingleField
     {
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Local

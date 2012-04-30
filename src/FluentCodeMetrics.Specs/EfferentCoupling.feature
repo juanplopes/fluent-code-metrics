@@ -14,15 +14,16 @@ Funcionalidade: Calcular Acoplamento Eferente (Ce)
 		Então obtenho <ce>
 
 		Exemplos: 
-			| tipo                       | ce |
-			| Samples.EmptyClass         | 1  |
-			| Samples.OneArgCtor         | 2  |
-			| Samples.OneArgVoidMethod   | 2  |
-			| Samples.IntMethod          | 2  |
-			| Samples.StringArgIntMethod | 3  |
-			| Samples.OneProperty        | 2  |
-			| Samples.OneAttribute       | 2  |
-			| Samples.OneException       | 2  |
+			| tipo                          | ce |
+			| Samples.EmptyClass            | 1  |
+			| Samples.OneArgCtor            | 2  |
+			| Samples.OneArgVoidMethod      | 2  |
+			| Samples.IntMethod             | 2  |
+			| Samples.StringArgIntMethod    | 3  |
+			| Samples.SingleProperty        | 2  |
+			| Samples.SingleField           | 2  |
+			| Samples.OneException          | 2  |
+			| Samples.SingleNonAutoProperty | 2  |
 
 
 

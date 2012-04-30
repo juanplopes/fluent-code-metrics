@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace FluentCodeMetrics.Core
 {
@@ -6,7 +9,23 @@ namespace FluentCodeMetrics.Core
     {
         public static int ComputeCe(this Type that)
         {
-            throw new NotImplementedException();
+            return that
+                .GetReferencedTypes()
+                .Count();
+        }
+
+        public static IEnumerable<Type>
+            GetReferencedTypes(this Type that)
+        {
+            var fieldTypes = from field in that.GetFields(BindingFlags.Instance |
+                                        BindingFlags.NonPublic |
+                                        BindingFlags.Public
+                                        )
+                             select field.FieldType;
+
+            return new[] { that.BaseType }
+                .Union(fieldTypes)
+                .Distinct();
         }
     }
 }
