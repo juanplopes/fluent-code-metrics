@@ -57,6 +57,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EfferentCoupling.feature</DependentUpon>
     </Compile>
+    <Compile Include="EfferentCouplingSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples.cs" />
   </ItemGroup>
@@ -67,6 +68,12 @@
       <LastGenOutput>EfferentCoupling.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluentCodeMetrics.Core\FluentCodeMetrics.Core.csproj">
+      <Project>{76E1A53D-F8EB-4AD1-A589-F7E6059E0503}</Project>
+      <Name>FluentCodeMetrics.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
