@@ -23,7 +23,7 @@ namespace Samples
          {}
     }
 
-    class IntMethod
+    public class IntMethod
     {
         public int Foo()
         {
@@ -44,7 +44,7 @@ namespace Samples
         public string Foo { get; set; }
     }
 
-    class SingleNonAutoProperty
+    public class SingleNonAutoProperty
     {
         public string Message
         {

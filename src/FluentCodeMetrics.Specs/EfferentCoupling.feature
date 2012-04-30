@@ -12,10 +12,11 @@ Funcionalidade: Calcular Acoplamento Eferente (Ce)
 		Dado que tenho um <tipo>
 		Quando inspeciono seu acoplamento eferente
 		Então obtenho <ce>
+		# todos os tipos tem object, boolean, string, int32, type no mínimo
 
 		Exemplos: 
 			| tipo                          | ce |
-			| Samples.EmptyClass            | 1  |
+			| Samples.EmptyClass            | 4  |
 			| Samples.OneArgCtor            | 2  |
 			| Samples.OneArgVoidMethod      | 2  |
 			| Samples.IntMethod             | 2  |

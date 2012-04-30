@@ -27,6 +27,26 @@ namespace FluentCodeMetrics.Tests
                     typeof(System.String)   // attribute type
                 );
         }
+
+        [Test]
+        public void GetReferencedTypes_SingleNonAutoProperty_ReturnsObjectAndString()
+        {
+            typeof(SingleNonAutoProperty).GetReferencedTypes()
+                .Should().Have.SameSequenceAs(
+                    typeof(System.Object),  // base type
+                    typeof(System.String)   // property type
+                );
+        }
+
+[Test]
+public void GetReferencedTypes_IntMethod_ReturnsObjectAndInt32()
+{
+    typeof(IntMethod).GetReferencedTypes()
+        .Should().Have.SameSequenceAs(
+            typeof(System.Object),  // base type
+            typeof(System.Int32)   // method return type
+        );
+}
     }
     // ReSharper restore InconsistentNaming
 }

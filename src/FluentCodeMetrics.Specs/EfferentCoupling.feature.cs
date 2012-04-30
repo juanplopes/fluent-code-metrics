@@ -71,7 +71,7 @@ tipos dos parâmetros em métodos e construtores, exceptions.", ProgrammingLangu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Calcular Acoplamento Eferente para um tipo")]
-        [NUnit.Framework.TestCaseAttribute("Samples.EmptyClass", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.EmptyClass", "4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.OneArgCtor", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.OneArgVoidMethod", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Samples.IntMethod", "2", new string[0])]
