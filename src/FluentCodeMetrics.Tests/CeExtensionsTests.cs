@@ -64,6 +64,34 @@ namespace FluentCodeMetrics.Tests
                     typeof(Type)
                 );
         }
+
+        [Test]
+        public void GetReferencedTypes_SingleArgVoidMethod()
+        {
+            typeof(SingleArgVoidMethod).GetReferencedTypes()
+                .Should().Have.SameSequenceAs(
+                    typeof(object),
+                    typeof(Fee), // argument type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
+                );
+        }
+
+        [Test]
+        public void GetReferencedTypes_SingleArgCtor()
+        {
+            typeof(SingleArgCtor).GetReferencedTypes()
+                .Should().Have.SameSequenceAs(
+                    typeof(object),
+                    typeof(Fee), // argument type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
+                );
+        }
     }
     // ReSharper restore InconsistentNaming
 }

@@ -13,15 +13,15 @@ namespace Samples
     {
     }
 
-    class OneArgCtor
+    public class SingleArgCtor
     {
 // ReSharper disable UnusedParameter.Local
-        public OneArgCtor(Fee arg)
+        public SingleArgCtor(Fee arg)
 // ReSharper restore UnusedParameter.Local
         {}
     }
 
-    class SingleArgVoidMethod
+    public class SingleArgVoidMethod
     {
          public void Foo(Fee arg)
          {}

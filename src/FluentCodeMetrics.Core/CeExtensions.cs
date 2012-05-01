@@ -32,7 +32,17 @@ public static IEnumerable<Type>
                             where method.ReturnType != typeof(void)
                             select method.ReturnType;
 
+    var methodParameterTypes = from method in that.GetMethods(flags)
+                               from parameter in method.GetParameters()
+                               select parameter.ParameterType;
+
+    var ctorParameterTypes = from ctor in that.GetConstructors(flags)
+                             from parameter in ctor.GetParameters()
+                             select parameter.ParameterType;
+    
     return new[] { that.BaseType }
+        .Union(ctorParameterTypes)
+        .Union(methodParameterTypes)
         .Union(fieldTypes)
         .Union(propertyTypes)
         .Union(methodReturnTypes)

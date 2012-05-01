@@ -21,10 +21,10 @@ Funcionalidade: Calcular Acoplamento Eferente (Ce)
 		Exemplos: 
 			| tipo                              | ce |
 			| Samples.EmptyClass                | 5  |
-			| Samples.OneArgCtor                | 6  |
-			| Samples.OneArgVoidMethod          | 6  |
+			| Samples.SingleArgCtor             | 6  |
+			| Samples.SingleArgVoidMethod       | 6  |
 			| Samples.FeeMethod                 | 6  |
-			| Samples.DateTimeArgDateTimeMethod | 7  |
+			| Samples.DateTimeArgDateTimeMethod | 6  |
 			| Samples.SingleProperty            | 6  |
 			| Samples.SingleField               | 6  |
 			| Samples.OneException              | 6  |
