@@ -5,6 +5,10 @@ using System;
 namespace Samples
 // ReSharper restore CheckNamespace
 {
+    public class Fee
+    {
+    }
+
     public class EmptyClass
     {
     }
@@ -12,43 +16,43 @@ namespace Samples
     class OneArgCtor
     {
 // ReSharper disable UnusedParameter.Local
-        public OneArgCtor(int arg)
+        public OneArgCtor(Fee arg)
 // ReSharper restore UnusedParameter.Local
         {}
     }
 
     class SingleArgVoidMethod
     {
-         public void Foo(int arg)
+         public void Foo(Fee arg)
          {}
     }
 
-    public class IntMethod
+    public class FeeMethod
     {
-        public int Foo()
+        public Fee Foo()
         {
-            return 0;
+            return new Fee();
         }
     }
 
-    class StringArgIntMethod
+    public class DateTimeArgDateTimeMethod
     {
-         public int Foo(string arg)
+         public DateTime Foo(DateTime arg)
          {
-             return 0;
+             return DateTime.Now;
          }
     }
 
     class SingleProperty
     {
-        public string Foo { get; set; }
+        public DateTime Foo { get; set; }
     }
 
     public class SingleNonAutoProperty
     {
-        public string Message
+        public DateTime DummyProperty
         {
-            get { return "Hello World"; }
+            get { return DateTime.Now; }
         }
     }
 
@@ -56,7 +60,7 @@ namespace Samples
     {
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Local
-        private string foo;
+        private DateTime foo;
 // ReSharper restore UnusedMember.Local
 // ReSharper restore InconsistentNaming
     }

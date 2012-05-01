@@ -35,9 +35,13 @@ namespace FluentCodeMetrics.Specs
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "Calcular Acoplamento Eferente (Ce)", @"
 Acomplamento Eferente é uma métrica que indica a quantidade
 de referências de um tipo para outros.
+
 Entram na contagem: classe base, interfaces implementadas, 
 tipos dos variáveis locais, atributos e das propriedades, 
-tipos dos parâmetros em métodos e construtores, exceptions.", ProgrammingLanguage.CSharp, ((string[])(null)));
+tipos dos parâmetros em métodos e construtores, exceptions.
+
+Como o objetivo é identificar a ""complexidade"" de um tipo,
+considero também as referências ""herdadas"".", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,25 +75,25 @@ tipos dos parâmetros em métodos e construtores, exceptions.", ProgrammingLangu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Calcular Acoplamento Eferente para um tipo")]
-        [NUnit.Framework.TestCaseAttribute("Samples.EmptyClass", "4", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.OneArgCtor", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.OneArgVoidMethod", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.IntMethod", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.StringArgIntMethod", "3", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.SingleProperty", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.SingleField", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.OneException", "2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Samples.SingleNonAutoProperty", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.EmptyClass", "5", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.OneArgCtor", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.OneArgVoidMethod", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.FeeMethod", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.DateTimeArgDateTimeMethod", "7", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleProperty", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleField", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.OneException", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Samples.SingleNonAutoProperty", "6", new string[0])]
         public virtual void CalcularAcoplamentoEferenteParaUmTipo(string tipo, string ce, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular Acoplamento Eferente para um tipo", exampleTags);
-#line 11
+#line 15
  this.ScenarioSetup(scenarioInfo);
-#line 12
+#line 16
   testRunner.Given(string.Format("que tenho um {0}", tipo));
-#line 13
+#line 17
   testRunner.When("inspeciono seu acoplamento eferente");
-#line 14
+#line 18
   testRunner.Then(string.Format("obtenho {0}", ce));
 #line hidden
             this.ScenarioCleanup();

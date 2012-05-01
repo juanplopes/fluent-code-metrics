@@ -2,6 +2,7 @@
 using SharpTestsEx;
 using FluentCodeMetrics.Core;
 using Samples;
+using System;
 
 namespace FluentCodeMetrics.Tests
 {
@@ -10,43 +11,59 @@ namespace FluentCodeMetrics.Tests
     public class CeExtensionsTests
     {
         [Test]
-        public void GetReferencedTypes_EmptyClass_ReturnsObject()
+        public void GetReferencedTypes_EmptyClass()
         {
             typeof(EmptyClass).GetReferencedTypes()
                 .Should().Have.SameSequenceAs(
-                    typeof(System.Object)
+                    typeof(object),
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
                 );
         }
 
         [Test]
-        public void GetReferencedTypes_SingleField_ReturnsObjectAndString()
+        public void GetReferencedTypes_SingleField()
         {
             typeof(SingleField).GetReferencedTypes()
                 .Should().Have.SameSequenceAs(
-                    typeof(System.Object),  // base type
-                    typeof(System.String)   // attribute type
+                    typeof(object),
+                    typeof(DateTime), // field type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
                 );
         }
 
         [Test]
-        public void GetReferencedTypes_SingleNonAutoProperty_ReturnsObjectAndString()
+        public void GetReferencedTypes_SingleNonAutoProperty()
         {
             typeof(SingleNonAutoProperty).GetReferencedTypes()
                 .Should().Have.SameSequenceAs(
-                    typeof(System.Object),  // base type
-                    typeof(System.String)   // property type
+                    typeof(object),
+                    typeof(DateTime), // property type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
                 );
         }
 
-[Test]
-public void GetReferencedTypes_IntMethod_ReturnsObjectAndInt32()
-{
-    typeof(IntMethod).GetReferencedTypes()
-        .Should().Have.SameSequenceAs(
-            typeof(System.Object),  // base type
-            typeof(System.Int32)   // method return type
-        );
-}
+        [Test]
+        public void GetReferencedTypes_FeeMethod()
+        {
+            typeof(FeeMethod).GetReferencedTypes()
+                .Should().Have.SameSequenceAs(
+                    typeof(object),
+                    typeof(Fee), // returning type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
+                );
+        }
     }
     // ReSharper restore InconsistentNaming
 }

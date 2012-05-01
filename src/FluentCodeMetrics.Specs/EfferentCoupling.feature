@@ -4,9 +4,13 @@ Funcionalidade: Calcular Acoplamento Eferente (Ce)
 	
 	Acomplamento Eferente é uma métrica que indica a quantidade
 	de referências de um tipo para outros.
+	
 	Entram na contagem: classe base, interfaces implementadas, 
 	tipos dos variáveis locais, atributos e das propriedades, 
 	tipos dos parâmetros em métodos e construtores, exceptions.
+
+	Como o objetivo é identificar a "complexidade" de um tipo,
+	considero também as referências "herdadas".
 
 	Esquema do Cenário: Calcular Acoplamento Eferente para um tipo
 		Dado que tenho um <tipo>
@@ -15,16 +19,16 @@ Funcionalidade: Calcular Acoplamento Eferente (Ce)
 		# todos os tipos tem object, boolean, string, int32, type no mínimo
 
 		Exemplos: 
-			| tipo                          | ce |
-			| Samples.EmptyClass            | 4  |
-			| Samples.OneArgCtor            | 2  |
-			| Samples.OneArgVoidMethod      | 2  |
-			| Samples.IntMethod             | 2  |
-			| Samples.StringArgIntMethod    | 3  |
-			| Samples.SingleProperty        | 2  |
-			| Samples.SingleField           | 2  |
-			| Samples.OneException          | 2  |
-			| Samples.SingleNonAutoProperty | 2  |
+			| tipo                              | ce |
+			| Samples.EmptyClass                | 5  |
+			| Samples.OneArgCtor                | 6  |
+			| Samples.OneArgVoidMethod          | 6  |
+			| Samples.FeeMethod                 | 6  |
+			| Samples.DateTimeArgDateTimeMethod | 7  |
+			| Samples.SingleProperty            | 6  |
+			| Samples.SingleField               | 6  |
+			| Samples.OneException              | 6  |
+			| Samples.SingleNonAutoProperty     | 6  |
 
 
 
