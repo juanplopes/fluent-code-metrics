@@ -92,6 +92,20 @@ namespace FluentCodeMetrics.Tests
                     typeof(Type)
                 );
         }
+
+        [Test]
+        public void GetReferencedTypes_OneException()
+        {
+            typeof(Samples.OneException).GetReferencedTypes()
+                .Should().Have.SameValuesAs(
+                    typeof(object),
+                    typeof(Exception), // argument type
+                    typeof(string),
+                    typeof(bool),
+                    typeof(int),
+                    typeof(Type)
+                );
+        }
     }
     // ReSharper restore InconsistentNaming
 }

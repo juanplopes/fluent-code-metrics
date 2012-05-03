@@ -43,7 +43,7 @@ namespace Samples
          }
     }
 
-    class SingleProperty
+    public class SingleProperty
     {
         public DateTime Foo { get; set; }
     }
@@ -65,7 +65,7 @@ namespace Samples
 // ReSharper restore InconsistentNaming
     }
 
-    class OneException
+    public class OneException
     {
          public void Foo()
          {
