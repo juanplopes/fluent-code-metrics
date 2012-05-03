@@ -11,3 +11,4 @@ TestResult.xml
 *.user
 *.pdb
 */*.ncrunchsolution*
+src/GlobalInfo.cs
